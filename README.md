@@ -11,3 +11,10 @@
 跟方向最相關的是22~26，15、16、19、20、21可以先跳過，而覺得弄得差不多了可以在試48、49、54
 
 SourceCode影片都有附上，https://github.com/beadcaptain/CodingMath 而這個是我自己之前做的這樣
+
+
+## 其他
+
+先不整理，單純先丟出跟我們方向相關的書
+
+PDF電子書 [Google Drive](https://drive.google.com/drive/folders/1YCooGN86mw_TNKmTB8LpJHbhuswdmCQk?usp=sharing)
