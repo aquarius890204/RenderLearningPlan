@@ -13,9 +13,9 @@
 SourceCode影片都有附上，https://github.com/beadcaptain/CodingMath 而這個是我自己之前做的這樣
 
 
-##
+## 計畫
 
-我目前大概計畫是
+我目前大概是打算這樣前進
 
 - [ ] win api與windows建立視窗程式的流程與原理
 - [ ] 用C++在DirectX/OpenGL中繪製圖形
@@ -23,6 +23,14 @@ SourceCode影片都有附上，https://github.com/beadcaptain/CodingMath 而這�
 - [ ] 思考後續學習方向
 
 詳細可參考"其他"倒數三個連結
+
+
+
+## 工具
+
+JavaScript建議用VS Code
+C++用VisualStudio、VScode+GCC
+
 
 ## 其他
 
