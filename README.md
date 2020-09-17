@@ -54,12 +54,14 @@ https://github.com/john-chapman/im3d
 https://github.com/tinyobjloader/tinyobjloader
 
 
-https://github.com/miloyip/game-programmer game-programmer map
+https://github.com/miloyip/game-programmer 
 
-https://github.com/utilForever/game-developer-roadmap gamedev roadmap
+https://github.com/utilForever/game-developer-roadmap 
 
 
-https://www.zhihu.com/question/26720808/answer/33885578 系統的學習計算機圖學
+https://www.zhihu.com/question/26720808/answer/33885578 
+
+https://www.zhihu.com/question/27544895/answer/99021929
 
 https://www.zhihu.com/question/30296764/answer/49978571
 
