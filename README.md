@@ -17,8 +17,8 @@ SourceCode影片都有附上，https://github.com/beadcaptain/CodingMath 而這�
 
 我目前大概計畫是
 
-- [ ] 用C++在DirectX/OpenGL中繪製圖形
 - [ ] win api與windows建立視窗程式的流程與原理
+- [ ] 用C++在DirectX/OpenGL中繪製圖形
 - [ ] 基本線框模型(正方體、三角體)
 - [ ] 攝影機視角控制
 - [ ] 平面著色
