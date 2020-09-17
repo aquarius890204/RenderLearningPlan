@@ -27,10 +27,39 @@ SourceCode影片都有附上，https://github.com/beadcaptain/CodingMath 而這�
 
 ## 其他
 
-先不整理，單純先丟出跟我們方向相關的書
-
-PDF電子書 [Google Drive](https://drive.google.com/drive/folders/1YCooGN86mw_TNKmTB8LpJHbhuswdmCQk?usp=sharing)
+先不整理，單純先丟出跟我們方向相關的資源
 
 應該會重點圍繞在這本書上，我這有簡中版，Tricks of the 3D Game Programming Gurus - Advanced 3D Graphics and Rasterization
 
 有些內容過時了，可能要慢慢研究替待方法
+
+
+PDF電子書 [Google Drive](https://drive.google.com/drive/folders/1YCooGN86mw_TNKmTB8LpJHbhuswdmCQk?usp=sharing)
+
+https://github.com/skywind3000/mini3d
+
+https://github.com/sdlwlxf1/tinyEngine
+
+https://github.com/zauonlok/renderer
+
+
+https://github.com/QianMo/Real-Time-Rendering-3rd-CN-Summary-Ebook
+
+https://github.com/ssloy/tinyrenderer
+
+https://github.com/ssloy/tinyraytracer
+
+https://github.com/john-chapman/im3d
+
+https://github.com/tinyobjloader/tinyobjloader
+
+
+https://github.com/miloyip/game-programmer game-programmer map
+
+https://github.com/utilForever/game-developer-roadmap gamedev roadmap
+
+
+https://www.zhihu.com/question/26720808/answer/33885578 系統的學習計算機圖學
+
+https://www.zhihu.com/question/30296764/answer/49978571
+
