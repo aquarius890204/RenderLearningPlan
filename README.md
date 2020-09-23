@@ -14,6 +14,14 @@ https://beadcaptain.github.io/
 
 SourceCode影片都有附上，https://github.com/beadcaptain/CodingMath 而這個是我自己之前做的這樣
 
+## 學習資料
+
+GAMES101: 现代计算机图形学入门-闫令琪:屬於理論課程，從投影轉換到紋理貼圖，再到光線追蹤與進階研究
+
+[課程主頁](https://sites.cs.ucsb.edu/~lingqi/teaching/games101.html)
+[課程影片](https://www.bilibili.com/video/BV1X7411F744)
+[重點整理](https://zhuanlan.zhihu.com/c_1249465121615204352)
+
 
 ## 計畫
 
