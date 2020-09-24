@@ -2,6 +2,9 @@
 
 https://beadcaptain.github.io/
 
+## 進度報告
+9/24 [link](https://docs.google.com/presentation/d/1Zpwb67JhtNaNhVla2_1DAEflPA8Z6sedFTbPJCBf3yY/edit?usp=sharing)
+
 ## Coding Math
 
 [Coding Math播放清單](https://www.youtube.com/playlist?list=PL7wAPgl1JVvUEb0dIygHzO4698tmcwLk9)
