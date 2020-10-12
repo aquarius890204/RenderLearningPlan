@@ -92,3 +92,26 @@ https://www.zhihu.com/question/27544895/answer/99021929
 
 https://www.zhihu.com/question/30296764/answer/49978571
 
+## 補充資源
+
+[國中幾何](https://www.youtube.com/watch?v=XE8So0BH-hU&list=PLGLWAatm7Y2Vkyw_NR5dy642ok6_IG3tw&index=40)
+
+Q仔數學教室
+
+[高一上:](https://www.youtube.com/playlist?list=PL-QFPCjbXoYFBtMAWWp_WLMjJBWbcB55B)
+算幾不等式、乘法公式、斜率、多項式函數、餘式定理、因式定理、指數對數
+
+[高一下:](https://www.youtube.com/playlist?list=PL-QFPCjbXoYG8gR67iWmoBbbgusHXrOff)
+數列、等差級數、排列組合、機率、貝式定理
+
+[高二上:](https://www.youtube.com/playlist?list=PL-QFPCjbXoYFqDzZKdhqKWnc5iSgcwm6r)
+三角函數、線性規劃、向量、行列式
+
+[高二下:](https://www.youtube.com/playlist?list=PL-QFPCjbXoYGkysC3LWTlP23Kgwhlg0tb)
+空間、平面方程式、矩陣、拋橢雙漸
+
+[高三上:](https://www.youtube.com/playlist?list=PL-QFPCjbXoYGwZ3MYrlPbeJN1K8CFuPqv)
+期望值、二項分布、信賴區間、三角函數、圓、複數極式、俐美佛
+
+[高三下:](https://www.youtube.com/playlist?list=PL-QFPCjbXoYEKqyExJnwBzaDuGNT-chIm)
+微積分
