@@ -37,8 +37,12 @@ GAMES101: 现代计算机图形学入门-闫令琪:屬於理論課程，從投�
 
 - [X] win api與windows建立視窗程式的流程與原理
 - [X] 用C++在DirectX/OpenGL中繪製圖形(改用WinAPI GDI)
+- [ ] 畫點、線DrawLine: DDA/Bresenham
+- [ ] FillTriangle/Triangle rasterization
 - [ ] 基本線框模型(正方體、三角體)
-- [ ] 思考後續學習方向
+- [ ] Backface Culling
+- [ ] Z-buffer
+- [ ] Clipping 
 
 詳細可參考"其他"倒數三個連結
 
