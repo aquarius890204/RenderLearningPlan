@@ -55,7 +55,7 @@ GAMES101: 现代计算机图形学入门-闫令琪:屬於理論課程，從投�
 
 JavaScript建議用VS Code
 
-C++用VisualStudio、VScode+GCC
+C++用VisualStudio2019、VScode+GCC
 
 
 ## 其他
