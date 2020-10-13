@@ -40,6 +40,7 @@ GAMES101: 现代计算机图形学入门-闫令琪:屬於理論課程，從投�
 - [ ] 畫點、線DrawLine: DDA/Bresenham
 - [ ] Transformation Matrices
 - [ ] FillTriangle/Triangle rasterization
+- [ ] [Line/Tri RGB gradient](https://www.youtube.com/watch?v=t7Ztio8cwqM)
 - [ ] 基本線框模型(正方體、三角體)
 - [ ] Backface Culling
 - [ ] Z-buffer
