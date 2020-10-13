@@ -31,9 +31,11 @@ GAMES101: 现代计算机图形学入门-闫令琪:屬於理論課程，從投�
 
 ## 計畫
 
+詳細在[Project](https://github.com/beadcaptain/RenderLearningPlan/projects)中，快捷鍵 g+B
+
 我目前大概是打算這樣前進
 
-- [ ] win api與windows建立視窗程式的流程與原理
+- [X] win api與windows建立視窗程式的流程與原理
 - [ ] 用C++在DirectX/OpenGL中繪製圖形
 - [ ] 基本線框模型(正方體、三角體)
 - [ ] 思考後續學習方向
