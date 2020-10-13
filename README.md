@@ -2,11 +2,11 @@
 
 https://beadcaptain.github.io/
 
-## Coding Math
+## 練習:Coding Math
 
 [Coding Math播放清單](https://www.youtube.com/playlist?list=PL7wAPgl1JVvUEb0dIygHzO4698tmcwLk9)
 
-大概了解一些繪製原理
+大概了解一些數學在繪製中運作的原理，與培養一些感覺
 
 **EP1~26**都可以跟著做，基本上就是先看完前1~5，然後剩下就是挑有興趣的做就好，基本上先了解繪製是在幹嘛就好
 
