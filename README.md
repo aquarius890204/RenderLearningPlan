@@ -31,18 +31,20 @@ GAMES101: 现代计算机图形学入门-闫令琪:屬於理論課程，從投�
 
 ## 計畫
 
-詳細在[Project](https://github.com/beadcaptain/RenderLearningPlan/projects/3)中，快捷鍵 g+B
+詳細在[Project](https://github.com/beadcaptain/RenderLearningPlan/projects/3)中，快捷鍵"g+b"
 
 我目前大概是打算這樣前進
 
 - [X] win api與windows建立視窗程式的流程與原理
 - [X] 用C++在DirectX/OpenGL中繪製圖形(改用WinAPI GDI)
 - [ ] 畫點、線DrawLine: DDA/Bresenham
+- [ ] Transformation Matrices
 - [ ] FillTriangle/Triangle rasterization
 - [ ] 基本線框模型(正方體、三角體)
 - [ ] Backface Culling
 - [ ] Z-buffer
-- [ ] Clipping 
+- [ ] Clipping
+- [ ] 四元數旋轉變換
 
 詳細可參考"其他"倒數三個連結
 
