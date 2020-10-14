@@ -1,0 +1,4 @@
+C:\Users\david\Desktop\tempWorkspace\win32\01 renderPoint\Debug\01 renderPoint.exe
+C:\Users\david\Desktop\tempWorkspace\win32\01 renderPoint\Debug\01 renderPoint.pdb
+C:\Users\david\Desktop\tempWorkspace\win32\02 renderLine\Debug\01 renderPoint.exe
+C:\Users\david\Desktop\tempWorkspace\win32\02 renderLine\Debug\01 renderPoint.pdb

@@ -1,0 +1,8 @@
+﻿  Source.cpp
+C:\Users\david\Desktop\tempWorkspace\win32\02 renderLine\Source.cpp(40,20): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\david\Desktop\tempWorkspace\win32\02 renderLine\Source.cpp(40,17): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\david\Desktop\tempWorkspace\win32\02 renderLine\Source.cpp(40,14): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\david\Desktop\tempWorkspace\win32\02 renderLine\Source.cpp(40,11): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\david\Desktop\tempWorkspace\win32\02 renderLine\Source.cpp(45,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\david\Desktop\tempWorkspace\win32\02 renderLine\Source.cpp(47,24): warning C4018: '<': signed/unsigned mismatch
+  01 renderPoint.vcxproj -> C:\Users\david\Desktop\tempWorkspace\win32\02 renderLine\Debug\01 renderPoint.exe

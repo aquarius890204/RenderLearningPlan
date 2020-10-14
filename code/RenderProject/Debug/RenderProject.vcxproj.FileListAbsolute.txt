@@ -1,0 +1,2 @@
+C:\Users\david\Desktop\tempWorkspace\win32\RenderProject\Debug\RenderProject.exe
+C:\Users\david\Desktop\tempWorkspace\win32\RenderProject\Debug\RenderProject.pdb

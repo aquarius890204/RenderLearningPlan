@@ -1,0 +1,2 @@
+C:\Users\david\Desktop\tempWorkspace\win32\00 CreateWindow\Debug\00 CreateWindow.exe
+C:\Users\david\Desktop\tempWorkspace\win32\00 CreateWindow\Debug\00 CreateWindow.pdb
