@@ -22,7 +22,9 @@ GAMES101: 现代计算机图形学入门-闫令琪:屬於理論課程，從投�
 [課程影片](https://www.bilibili.com/video/BV1X7411F744)
 [重點整理](https://zhuanlan.zhihu.com/c_1249465121615204352)
 
-參考書: [Fundamentals Of Computer Graphics - Peter Shirley, Steve Marschner](https://drive.google.com/file/d/1FOnWLmHryxLs2DDpxX2sBjnrHKrl3tUF/view?usp=sharing)
+參考書: 
+[Fundamentals Of Computer Graphics - Peter Shirley, Steve Marschner](https://drive.google.com/file/d/1FOnWLmHryxLs2DDpxX2sBjnrHKrl3tUF/view?usp=sharing)
+[Real-Time Rendering 3rd](https://drive.google.com/file/d/1yCcELvLOGFLd2h8u_DscukFLGV9Jakar/view?usp=sharing)
 
 [Computer Graphics (ECS175)](https://www.youtube.com/playlist?list=PL_w_qWAQZtAZhtzPI5pkAtcUVgmzdAP8g)
 
