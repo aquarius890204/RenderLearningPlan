@@ -2,14 +2,11 @@
 
 https://beadcaptain.github.io/
 
-## 進度報告
-9/24 [link](https://docs.google.com/presentation/d/1Zpwb67JhtNaNhVla2_1DAEflPA8Z6sedFTbPJCBf3yY/edit?usp=sharing)
+## 支線:Coding Math
 
-## Coding Math
+基礎練習，大概了解一些數學在繪製中運作的原理，與培養一些感覺
 
 [Coding Math播放清單](https://www.youtube.com/playlist?list=PL7wAPgl1JVvUEb0dIygHzO4698tmcwLk9)
-
-大概了解一些繪製原理
 
 **EP1~26**都可以跟著做，基本上就是先看完前1~5，然後剩下就是挑有興趣的做就好，基本上先了解繪製是在幹嘛就好
 
@@ -17,7 +14,7 @@ https://beadcaptain.github.io/
 
 SourceCode影片都有附上，https://github.com/beadcaptain/CodingMath 而這個是我自己之前做的這樣
 
-## 學習資料
+## 主線:學習資料
 
 GAMES101: 现代计算机图形学入门-闫令琪:屬於理論課程，從投影轉換到紋理貼圖，再到光線追蹤與進階研究
 
@@ -25,21 +22,32 @@ GAMES101: 现代计算机图形学入门-闫令琪:屬於理論課程，從投�
 [課程影片](https://www.bilibili.com/video/BV1X7411F744)
 [重點整理](https://zhuanlan.zhihu.com/c_1249465121615204352)
 
-參考書: [Fundamentals Of Computer Graphics - Peter Shirley, Steve Marschner](https://drive.google.com/file/d/1FOnWLmHryxLs2DDpxX2sBjnrHKrl3tUF/view?usp=sharing)
-
 [Computer Graphics (ECS175)](https://www.youtube.com/playlist?list=PL_w_qWAQZtAZhtzPI5pkAtcUVgmzdAP8g)
 
 [MIT 6.837 Computer Graphics (Fall 2003)](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-837-computer-graphics-fall-2012/lecture-notes/)
 
+參考書: 
+- [Fundamentals Of Computer Graphics - Peter Shirley, Steve Marschner](https://drive.google.com/file/d/1FOnWLmHryxLs2DDpxX2sBjnrHKrl3tUF/view?usp=sharing)
+- [Real-Time Rendering 3rd](https://drive.google.com/file/d/1yCcELvLOGFLd2h8u_DscukFLGV9Jakar/view?usp=sharing)
+
 
 ## 計畫
 
+詳細在[Project](https://github.com/beadcaptain/RenderLearningPlan/projects/3)中，快捷鍵"g+b"
+
 我目前大概是打算這樣前進
 
-- [ ] win api與windows建立視窗程式的流程與原理
-- [ ] 用C++在DirectX/OpenGL中繪製圖形
+- [X] win api與windows建立視窗程式的流程與原理
+- [X] 用C++在~~DirectX/OpenGL~~中繪製圖形(改用WinAPI GDI)
+- [ ] 畫點、線DrawLine: DDA/Bresenham
+- [ ] Transformation Matrices
+- [ ] FillTriangle/Triangle rasterization
+- [ ] [Line/Tri RGB gradient](https://www.youtube.com/watch?v=t7Ztio8cwqM)
 - [ ] 基本線框模型(正方體、三角體)
-- [ ] 思考後續學習方向
+- [ ] Backface Culling
+- [ ] Z-buffer
+- [ ] Clipping
+- [ ] 四元數旋轉變換
 
 詳細可參考"其他"倒數三個連結
 
@@ -49,7 +57,7 @@ GAMES101: 现代计算机图形学入门-闫令琪:屬於理論課程，從投�
 
 JavaScript建議用VS Code
 
-C++用VisualStudio、VScode+GCC
+C++用VisualStudio2019、VScode+GCC+CM
 
 
 ## 其他
