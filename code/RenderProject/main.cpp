@@ -1,33 +1,50 @@
 ﻿#include <Windows.h>
-#include <stdio.h>
-#include <algorithm>
+#include <algorithm> // std::swap
 #include <cmath>
-#include <chrono>
-#include <wchar.h>
+#include <chrono> // timer
+#include <wchar.h>// swprintf
+#include <vector>
 
+using namespace std;
 using namespace std::chrono;
-
+//---------------------------------
+// data type
 typedef unsigned int u32;
-typedef struct Vec2 { float x, y; }vec2;
-typedef struct Vec3 { float x, y, z; }vec3;
+typedef struct _Mat4x4 { float m[4][4] = { 0 }; } mat4x4;
+typedef struct _Vec2 { float x, y; } vec2;
+typedef struct _Vec3 { float x, y, z; } vec3;
+
+typedef struct _Triangle { vec3 p[3]; } triangle;
+typedef struct _Mesh { vector<triangle> tris; } mesh;
+
+//--------------------------------
+void onLoad();
+void clear(u32 c);
+void update(float dt);
+void render(float dt);
 
 void drawPoint(int x, int y, u32 c);
 void drawLine(int x1, int y1, int x2, int y2, u32 c);
 void DDA(int x, int y, int w, int h, u32 c);
 void bresenham2(int x1, int y1, int x2, int y2, u32 c);
 void drawRect(int x, int y, int w, int h, u32 c);
-void drawTriangle(vec2 v1, vec2 v2, vec2 v3, u32 c);
-void fillTopFlatTriangle(vec2 v1, vec2 v2, vec2 v3, u32 c);
-void fillBottomFlatTriangle(vec2 v1, vec2 v2, vec2 v3, u32 c);
-void fillTriangle(vec2 v1, vec2 v2, vec2 v3, u32 c);
+void drawTriangle(vec3 v1, vec3 v2, vec3 v3, u32 c);
+void fillTopFlatTriangle(vec3 v1, vec3 v2, vec3 v3, u32 c);
+void fillBottomFlatTriangle(vec3 v1, vec3 v2, vec3 v3, u32 c);
+void fillTriangle(vec3 v1, vec3 v2, vec3 v3, u32 c);
 
 void fpsCounting();
+
+void MultiplyMatrixVector(mat4x4& m, vec3& i, vec3& o);
 
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);//MSDN
 int __cdecl printf2(const char* format, ...);
 
+uint64_t timeSinceEpochMillisec();
 //-----------------------------------------------
-// global variable
+// global
+const float PI = 3.14159265358979f;
+
 bool running = true;
 
 void* buffer_memory;
@@ -39,16 +56,156 @@ BITMAPINFO buffer_bitmap_info;
 
 u32 backcolor = 0xFFFFFF;//0xAARRGGBB;
 
-vec2 rect{ 0,0 }, rectS{ 50,50 }, rectV{ 0.25,0.5 };
-vec2 v1{ 200,300 }, v2{ 250,400 }, v3{ 100,350 };
+vec3 v1{ 200,300 }, v2{ 250,400 }, v3{ 100,350 };
+
+mesh* meshs;
+vec2* poss;
+vec3 offset{ 300,300,0 };
+int scale = 100;
+float fl = 3.5, centZ = 0;
+float fTheta = 0;
+
 
 uint64_t timeSinceEpochMillisec() {
-	using namespace std::chrono;
+	//using namespace std::chrono;
 	return duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count();
 }
-int t1 = timeSinceEpochMillisec(), dt = 0, totalT = 0;;
+int lastT = timeSinceEpochMillisec(), dt = 0, totalT = 0;;
 int fps = 0, frames = 0;
 //-----------------------------------------------
+
+void onLoad() {
+	mesh meshCube{
+		{
+			// SOUTH
+			{ 0.0f, 0.0f, 0.0f,    0.0f, 1.0f, 0.0f,    1.0f, 1.0f, 0.0f },
+			{ 0.0f, 0.0f, 0.0f,    1.0f, 1.0f, 0.0f,    1.0f, 0.0f, 0.0f },
+
+			// EAST                                                      
+			{ 1.0f, 0.0f, 0.0f,    1.0f, 1.0f, 0.0f,    1.0f, 1.0f, 1.0f },
+			{ 1.0f, 0.0f, 0.0f,    1.0f, 1.0f, 1.0f,    1.0f, 0.0f, 1.0f },
+
+			// NORTH                                                     
+			{ 1.0f, 0.0f, 1.0f,    1.0f, 1.0f, 1.0f,    0.0f, 1.0f, 1.0f },
+			{ 1.0f, 0.0f, 1.0f,    0.0f, 1.0f, 1.0f,    0.0f, 0.0f, 1.0f },
+
+			// WEST                                                      
+			{ 0.0f, 0.0f, 1.0f,    0.0f, 1.0f, 1.0f,    0.0f, 1.0f, 0.0f },
+			{ 0.0f, 0.0f, 1.0f,    0.0f, 1.0f, 0.0f,    0.0f, 0.0f, 0.0f },
+
+			// TOP                                                       
+			{ 0.0f, 1.0f, 0.0f,    0.0f, 1.0f, 1.0f,    1.0f, 1.0f, 1.0f },
+			{ 0.0f, 1.0f, 0.0f,    1.0f, 1.0f, 1.0f,    1.0f, 1.0f, 0.0f },
+
+			// BOTTOM                                                    
+			{ 1.0f, 0.0f, 1.0f,    0.0f, 0.0f, 1.0f,    0.0f, 0.0f, 0.0f },
+			{ 1.0f, 0.0f, 1.0f,    0.0f, 0.0f, 0.0f,    1.0f, 0.0f, 0.0f }
+		}
+	};
+
+	mesh meshTri{
+		{
+			{ 0.0f, 0.0f, 0.0f,    0.0f, 1.0f, 0.0f,    1.0f, 1.0f, 0.0f }
+		}
+	};
+	mesh meshRect{
+		{
+			{ 0.0f, 0.0f, 0.0f,    0.0f, 1.0f, 0.0f,    1.0f, 1.0f, 0.0f },
+			{ 0.0f, 0.0f, 0.0f,    1.0f, 1.0f, 0.0f,    1.0f, 0.0f, 0.0f }
+		}
+	};
+
+	mesh meshCones{
+		{
+			//bot
+			{ 0.0f, 0.0f, 0.0f,    0.0f, 0.0f, 1.0f,    1.0f, 0.0f, 1.0f },
+			{ 0.0f, 0.0f, 0.0f,    1.0f, 0.0f, 1.0f,    1.0f, 0.0f, 0.0f },
+
+			// SOUTH
+			{ 0.0f, 0.0f, 0.0f,    0.5f, 1.2, 0.5f,    1.0f, 0.0f, 0.0f },
+
+			// EAST                                                      
+			{ 1.0f, 0.0f, 0.0f,    0.5f, 1.2, 0.5f,    1.0f, 0.0f, 1.0f },
+
+			// NORTH                                                     
+			{ 1.0f, 0.0f, 1.0f,    0.5f, 1.2, 0.5f,    0.0f, 0.0f, 1.0f },
+
+			// WEST                                                      
+			{ 0.0f, 0.0f, 1.0f,    0.5f, 1.2, 0.5f,    0.0f, 0.0f, 0.0f }
+		}
+	};
+
+	meshs = new mesh[]{ meshTri, meshRect, meshCones,meshCube };
+	poss = new vec2[]{ vec2{100,100},vec2{200,100},vec2{300,100},vec2{420,100} };
+}
+
+void update(float dt) {
+
+	//printf2("x:%f, y:%f\n", rect.x, rect.y);
+}
+
+void render(float dt) {
+	clear(backcolor);
+	// -----------
+	fillTriangle(v1, v2, v3, 0xFF7700);
+	drawTriangle(v1, v2, v3, 0x000000);
+
+	mat4x4 matRotZ, matRotX, matScale, matProj;
+	fTheta += 0.7f * dt / 1000;
+
+	// Rotation Z
+	matRotZ.m[0][0] = cosf(fTheta);
+	matRotZ.m[0][1] = -sinf(fTheta);
+	matRotZ.m[1][0] = sinf(fTheta);
+	matRotZ.m[1][1] = cosf(fTheta);
+	matRotZ.m[2][2] = 1;
+	matRotZ.m[3][3] = 1;
+
+	// Rotation X
+	matRotX.m[0][0] = 1;
+	matRotX.m[1][1] = cosf(fTheta * 0.5f);
+	matRotX.m[1][2] = -sinf(fTheta * 0.5f);
+	matRotX.m[2][1] = sinf(fTheta * 0.5f);
+	matRotX.m[2][2] = cosf(fTheta * 0.5f);
+	matRotX.m[3][3] = 1;
+
+	matScale.m[0][0] = 50;//sx
+	matScale.m[1][1] = 50;//sy
+	matScale.m[2][2] = 1;//sz
+	matScale.m[0][3] = 0;//tx
+	matScale.m[1][3] = 0;//ty
+	matScale.m[2][3] = 0;//tz
+	matScale.m[3][3] = 1;
+
+	for (size_t i = 0; i < 4; i++) {
+		matScale.m[0][3] = poss[i].x;//tx
+		matScale.m[1][3] = poss[i].y;//ty
+		for (auto tri : meshs[i].tris) {
+			triangle triProjected, triTranslated, triRotatedZ, triRotatedZX, triRotated;
+			// Rotate in Z-Axis
+			for (size_t i = 0; i < 3; i++) MultiplyMatrixVector(matRotZ, tri.p[i], triRotatedZ.p[i]);
+			// Rotate in X-Axis
+			for (size_t i = 0; i < 3; i++) MultiplyMatrixVector(matRotX, triRotatedZ.p[i], triRotatedZX.p[i]);
+
+			// Scale
+			//for (size_t i = 0; i < 3; i++) MultiplyMatrixVector(matScale, triRotatedZX.p[i], triTranslated.p[i]);
+			triRotated = triRotatedZX;
+
+			// project tri from 3D->2D
+			for (size_t i = 0; i < 3; i++) {
+				float per = fl / (fl + triRotated.p[i].z + centZ);
+
+				triProjected.p[i].x = triRotated.p[i].x * per;
+				triProjected.p[i].y = triRotated.p[i].y * per;
+			}
+			for (size_t i = 0; i < 3; i++) MultiplyMatrixVector(matScale, triProjected.p[i], triTranslated.p[i]);
+			if (i == 0)fillTriangle(triTranslated.p[0], triTranslated.p[1], triTranslated.p[2], 0xF0000);
+			drawTriangle(triTranslated.p[0], triTranslated.p[1], triTranslated.p[2], 0x0000);
+		}
+	}
+
+}
+
 void clear(u32 c) {
 	u32* pixel = (u32*)buffer_memory;
 	for (size_t y = 0; y < buffer_height; y++)
@@ -58,40 +215,6 @@ void clear(u32 c) {
 			*pixel++ = c;
 		}
 	}
-}
-void update() {
-	//printf2("x:%f, y:%f\n", rect.x, rect.y);
-
-	rect.x += rectV.x;
-	rect.y += rectV.y;
-	if (rect.x <= 0 || rect.x + rectS.x >= buffer_width - 1) rectV.x *= -1;
-	if (rect.y <= 0 || rect.y + rectS.y >= buffer_height - 1) rectV.y *= -1;
-	//printf2("x:%f, y:%f\n", rect.x, rect.y);
-
-}
-
-void render() {
-	// clear
-	clear(backcolor);
-
-	int len = 100;
-	int cx1 = 110, cy1 = 110;
-	const float PI = 3.14159265358979f;
-	//drawLine(0, 10, 100, 100, 0);
-	for (float i = 0; i < PI * 2; i += PI / 8)
-	{
-		DDA(cx1, cy1, cx1 + len * cos(i), cy1 + len * sin(i), 0x000000);
-		drawLine(cx1 + 250, cy1, cx1 + 250 + len * cos(i), cy1 + len * sin(i), 0x0000FF);
-		bresenham2(cx1 + 500, cy1, cx1 + 500 + len * cos(i), cy1 + len * sin(i), 0x0000FF);
-	}
-
-	fillTriangle(v1, v2, v3, 0xFF7700);
-	//drawTriangle(v1, v2, v3, 0);
-	//DDA(0, 30, buffer_width, 30, 0x000000);
-	//DDA(100, 100, 150, 80, 0x000000);
-
-	//drawLine(100, 100, 200, 300, 0x000000);
-	drawRect(rect.x, rect.y, rectS.x, rectS.y, 0x0000FF);
 }
 //-----------------------------------------------
 
@@ -117,8 +240,8 @@ int CALLBACK WinMain(_In_ HINSTANCE hInstance,
 		WS_OVERLAPPEDWINDOW | WS_VISIBLE, //視窗外觀樣式
 		100,				//相對於parent的x座標
 		200,				//相對於parent的y座標
-		800,				//視窗寬度
-		600,				//視窗高度
+		800 + 16,				//視窗寬度
+		600 + 39,				//視窗高度
 		NULL,				//parent window，沒的話NULL即可
 		NULL,				//menu
 		hInstance,			//當前程式的追蹤
@@ -131,12 +254,12 @@ int CALLBACK WinMain(_In_ HINSTANCE hInstance,
 	// 顯示視窗 dxstyle =| WS_VISIBLE 就不用這行
 	//ShowWindow(hwnd, SW_SHOW);
 
-	// 事件訊息loop
-
+	onLoad();
 	wchar_t strBuffer[100];
+	// 事件訊息loop
 	while (running) {
 		fpsCounting();
-		swprintf(strBuffer, 100, L"win32 test FPS:%4d dt:%2dms", fps, dt);
+		swprintf(strBuffer, 100, L"Win32 Render %dx%d, FPS:%4d, dt:%2dms", buffer_width, buffer_height, fps, dt);
 		SetWindowText(hwnd, strBuffer);
 		// Input
 		MSG msg;
@@ -146,8 +269,8 @@ int CALLBACK WinMain(_In_ HINSTANCE hInstance,
 		}
 
 		// Update
-		update();
-		render();
+		update(dt);
+		render(dt);
 
 		// Render on app
 		StretchDIBits(
@@ -171,8 +294,7 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) 
 			running = false;
 			break;
 		}
-					   // when window change
-		case WM_SIZE: {
+		case WM_SIZE: { // when window change
 			RECT rect;
 			GetClientRect(hwnd, &rect);// 不包含標題列的區域
 			buffer_width = rect.right - rect.left;
@@ -196,7 +318,7 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) 
 }
 
 void fpsCounting() {
-	dt = timeSinceEpochMillisec() - t1;
+	dt = timeSinceEpochMillisec() - lastT;
 	totalT += dt;
 	frames++;
 	//printf2("%d\n", totalT);
@@ -206,7 +328,7 @@ void fpsCounting() {
 		fps = frames;
 		frames = 0;
 	}
-	t1 = timeSinceEpochMillisec();
+	lastT = timeSinceEpochMillisec();
 }
 
 
@@ -286,6 +408,7 @@ void DDA(int x1, int y1, int x2, int y2, u32 c) {
 void bresenham2(int x1, int y1, int x2, int y2, u32 c) {
 	int steep = (abs(y2 - y1) > abs(x2 - x1)) ? 1 : 0;
 	if (steep) {
+		// m>1
 		std::swap(x1, y1);
 		std::swap(x2, y2);
 	}
@@ -323,39 +446,33 @@ void drawRect(int x, int y, int w, int h, u32 c) {
 	drawLine(x + w, y, x + w, y + h, c);
 	drawLine(x, y + h, x + w, y + h, c);
 }
-void drawTriangle(vec2 v1, vec2 v2, vec2 v3, u32 c) {
+void drawTriangle(vec3 v1, vec3 v2, vec3 v3, u32 c) {
 	drawLine(v1.x, v1.y, v2.x, v2.y, c);
 	drawLine(v2.x, v2.y, v3.x, v3.y, c);
 	drawLine(v3.x, v3.y, v1.x, v1.y, c);
 }
-void fillTriangle(vec2 v1, vec2 v2, vec2 v3, u32 c) {
-	/* at first sort the three vertices by y-coordinate ascending so v1 is the topmost vertice */
-	//sortVerticesAscendingByY();
+void fillTriangle(vec3 v1, vec3 v2, vec3 v3, u32 c) {
 	if (v1.y > v2.y)std::swap(v1, v2);
 	if (v2.y > v3.y)std::swap(v2, v3);
 	if (v1.y > v2.y)std::swap(v1, v2);
 
-	/* here we know that v1.y <= v2.y <= v3.y */
-	/* check for trivial case of bottom-flat triangle */
 	if (v2.y == v3.y)
 	{
 		fillBottomFlatTriangle(v1, v2, v3, c);
 	}
-	/* check for trivial case of top-flat triangle */
 	else if (v1.y == v2.y)
 	{
 		fillTopFlatTriangle(v1, v2, v3, c);
 	}
 	else
 	{
-		/* general case - split the triangle in a topflat and bottom-flat one */
-		vec2 v4{ (int)(v1.x + ((float)(v2.y - v1.y) / (float)(v3.y - v1.y)) * (v3.x - v1.x)), v2.y };
+		vec3 v4{ (v1.x + ((v2.y - v1.y) / (v3.y - v1.y)) * (v3.x - v1.x)), v2.y };
 		fillBottomFlatTriangle(v1, v2, v4, c);
 		fillTopFlatTriangle(v2, v4, v3, c);
 	}
 }
 
-void fillBottomFlatTriangle(vec2 v1, vec2 v2, vec2 v3, u32 c) {
+void fillBottomFlatTriangle(vec3 v1, vec3 v2, vec3 v3, u32 c) {
 	float invslope1 = (v2.x - v1.x) / (v2.y - v1.y);
 	float invslope2 = (v3.x - v1.x) / (v3.y - v1.y);
 
@@ -369,7 +486,7 @@ void fillBottomFlatTriangle(vec2 v1, vec2 v2, vec2 v3, u32 c) {
 		curx2 += invslope2;
 	}
 }
-void fillTopFlatTriangle(vec2 v1, vec2 v2, vec2 v3, u32 c) {
+void fillTopFlatTriangle(vec3 v1, vec3 v2, vec3 v3, u32 c) {
 	float invslope1 = (v3.x - v1.x) / (v3.y - v1.y);
 	float invslope2 = (v3.x - v2.x) / (v3.y - v2.y);
 
@@ -396,4 +513,36 @@ int __cdecl printf2(const char* format, ...)
 	OutputDebugStringA(str);
 
 	return ret;
+}
+
+void MultiplyMatrixVector(mat4x4& m, vec3& i, vec3& o)
+{
+	/*
+	r\c
+		[a b c d]
+		[e f g h]
+		[i j k l]
+		[m n o p]
+	m[0][1]=>b
+	m[0][2]=>c
+	*/
+	o.x = i.x * m.m[0][0] + i.y * m.m[0][1] + i.z * m.m[0][2] + m.m[0][3];
+	o.y = i.x * m.m[1][0] + i.y * m.m[1][1] + i.z * m.m[1][2] + m.m[1][3];
+	o.z = i.x * m.m[2][0] + i.y * m.m[2][1] + i.z * m.m[2][2] + m.m[2][3];
+	float w = i.x * m.m[3][0] + i.y * m.m[3][1] + i.z * m.m[3][2] + m.m[3][3];
+
+	if (w != 0.0f)
+	{
+		o.x /= w; o.y /= w; o.z /= w;
+	}
+}
+void setMat44(float a, float b, float c, float d,
+			  float e, float f, float g, float h,
+			  float i, float j, float k, float l,
+			  float m2, float n, float o, float p,
+			  mat4x4& m) {
+	m.m[0][0] = a; m.m[0][1] = b; m.m[0][2] = c; m.m[0][3] = d;
+	m.m[0][0] = e; m.m[0][1] = f; m.m[0][2] = g; m.m[0][3] = h;
+	m.m[0][0] = i; m.m[0][0] = j; m.m[0][0] = k; m.m[0][0] = l;
+	m.m[0][0] = m2; m.m[0][0] = n; m.m[0][0] = o; m.m[0][0] = p;
 }

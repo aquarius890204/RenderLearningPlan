@@ -1,0 +1,28 @@
+﻿  main.cpp
+C:\Users\david\Desktop\tempWorkspace\win32\RenderProject\main.cpp(73,11): warning C4244: 'initializing': conversion from 'uint64_t' to 'int', possible loss of data
+C:\Users\david\Desktop\tempWorkspace\win32\RenderProject\main.cpp(136,2): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\david\Desktop\tempWorkspace\win32\RenderProject\main.cpp(211,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\david\Desktop\tempWorkspace\win32\RenderProject\main.cpp(213,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\david\Desktop\tempWorkspace\win32\RenderProject\main.cpp(272,10): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\david\Desktop\tempWorkspace\win32\RenderProject\main.cpp(273,10): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\david\Desktop\tempWorkspace\win32\RenderProject\main.cpp(321,32): warning C4244: '=': conversion from 'uint64_t' to 'int', possible loss of data
+C:\Users\david\Desktop\tempWorkspace\win32\RenderProject\main.cpp(331,32): warning C4244: '=': conversion from 'uint64_t' to 'int', possible loss of data
+C:\Users\david\Desktop\tempWorkspace\win32\RenderProject\main.cpp(397,10): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\david\Desktop\tempWorkspace\win32\RenderProject\main.cpp(397,18): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\david\Desktop\tempWorkspace\win32\RenderProject\main.cpp(405,28): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\david\Desktop\tempWorkspace\win32\RenderProject\main.cpp(405,18): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\david\Desktop\tempWorkspace\win32\RenderProject\main.cpp(450,31): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\david\Desktop\tempWorkspace\win32\RenderProject\main.cpp(450,25): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\david\Desktop\tempWorkspace\win32\RenderProject\main.cpp(450,19): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\david\Desktop\tempWorkspace\win32\RenderProject\main.cpp(450,13): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\david\Desktop\tempWorkspace\win32\RenderProject\main.cpp(451,31): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\david\Desktop\tempWorkspace\win32\RenderProject\main.cpp(451,25): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\david\Desktop\tempWorkspace\win32\RenderProject\main.cpp(451,19): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\david\Desktop\tempWorkspace\win32\RenderProject\main.cpp(451,13): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\david\Desktop\tempWorkspace\win32\RenderProject\main.cpp(452,31): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\david\Desktop\tempWorkspace\win32\RenderProject\main.cpp(452,25): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\david\Desktop\tempWorkspace\win32\RenderProject\main.cpp(452,19): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\david\Desktop\tempWorkspace\win32\RenderProject\main.cpp(452,13): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\david\Desktop\tempWorkspace\win32\RenderProject\main.cpp(482,21): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\david\Desktop\tempWorkspace\win32\RenderProject\main.cpp(496,21): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  RenderProject.vcxproj -> C:\Users\david\Desktop\tempWorkspace\win32\RenderProject\Debug\RenderProject.exe
