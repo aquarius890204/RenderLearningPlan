@@ -1,0 +1,29 @@
+﻿  main.cpp
+C:\Users\1080928\Desktop\directtest\RenderLearningPlan-master\code\RenderProject\main.cpp(73,11): warning C4244: '正在初始化': 將 'uint64_t' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\1080928\Desktop\directtest\RenderLearningPlan-master\code\RenderProject\main.cpp(136,2): warning C4305: '正在初始化': 從 'double' 轉換為 'float'，是由較大的類型轉換為較小的類型，可能導致資料遺失
+C:\Users\1080928\Desktop\directtest\RenderLearningPlan-master\code\RenderProject\main.cpp(188,2): warning C4305: '正在初始化': 從 'double' 轉換為 'float'，是由較大的類型轉換為較小的類型，可能導致資料遺失
+C:\Users\1080928\Desktop\directtest\RenderLearningPlan-master\code\RenderProject\main.cpp(311,23): warning C4018: '<': signed/unsigned 不相符
+C:\Users\1080928\Desktop\directtest\RenderLearningPlan-master\code\RenderProject\main.cpp(313,24): warning C4018: '<': signed/unsigned 不相符
+C:\Users\1080928\Desktop\directtest\RenderLearningPlan-master\code\RenderProject\main.cpp(372,10): warning C4244: '引數': 將 'int' 轉換為 'float'，由於類型不同，可能導致資料遺失
+C:\Users\1080928\Desktop\directtest\RenderLearningPlan-master\code\RenderProject\main.cpp(373,10): warning C4244: '引數': 將 'int' 轉換為 'float'，由於類型不同，可能導致資料遺失
+C:\Users\1080928\Desktop\directtest\RenderLearningPlan-master\code\RenderProject\main.cpp(421,32): warning C4244: '=': 將 'uint64_t' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\1080928\Desktop\directtest\RenderLearningPlan-master\code\RenderProject\main.cpp(431,32): warning C4244: '=': 將 'uint64_t' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\1080928\Desktop\directtest\RenderLearningPlan-master\code\RenderProject\main.cpp(497,10): warning C4244: '正在初始化': 將 'int' 轉換為 'float'，由於類型不同，可能導致資料遺失
+C:\Users\1080928\Desktop\directtest\RenderLearningPlan-master\code\RenderProject\main.cpp(497,18): warning C4244: '正在初始化': 將 'int' 轉換為 'float'，由於類型不同，可能導致資料遺失
+C:\Users\1080928\Desktop\directtest\RenderLearningPlan-master\code\RenderProject\main.cpp(505,28): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\1080928\Desktop\directtest\RenderLearningPlan-master\code\RenderProject\main.cpp(505,18): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\1080928\Desktop\directtest\RenderLearningPlan-master\code\RenderProject\main.cpp(550,31): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\1080928\Desktop\directtest\RenderLearningPlan-master\code\RenderProject\main.cpp(550,25): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\1080928\Desktop\directtest\RenderLearningPlan-master\code\RenderProject\main.cpp(550,19): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\1080928\Desktop\directtest\RenderLearningPlan-master\code\RenderProject\main.cpp(550,13): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\1080928\Desktop\directtest\RenderLearningPlan-master\code\RenderProject\main.cpp(551,31): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\1080928\Desktop\directtest\RenderLearningPlan-master\code\RenderProject\main.cpp(551,25): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\1080928\Desktop\directtest\RenderLearningPlan-master\code\RenderProject\main.cpp(551,19): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\1080928\Desktop\directtest\RenderLearningPlan-master\code\RenderProject\main.cpp(551,13): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\1080928\Desktop\directtest\RenderLearningPlan-master\code\RenderProject\main.cpp(552,31): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\1080928\Desktop\directtest\RenderLearningPlan-master\code\RenderProject\main.cpp(552,25): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\1080928\Desktop\directtest\RenderLearningPlan-master\code\RenderProject\main.cpp(552,19): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\1080928\Desktop\directtest\RenderLearningPlan-master\code\RenderProject\main.cpp(552,13): warning C4244: '引數': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\1080928\Desktop\directtest\RenderLearningPlan-master\code\RenderProject\main.cpp(582,21): warning C4244: '正在初始化': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\1080928\Desktop\directtest\RenderLearningPlan-master\code\RenderProject\main.cpp(596,21): warning C4244: '正在初始化': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
+  RenderProject.vcxproj -> C:\Users\1080928\Desktop\directtest\RenderLearningPlan-master\code\RenderProject\Debug\RenderProject.exe
